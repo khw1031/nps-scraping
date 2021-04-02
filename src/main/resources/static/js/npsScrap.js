@@ -6,7 +6,7 @@ define(["jquery"], function ($) {
   var URLs = {
     updateEngine: HOST + "UpdateEngine?service_key=" + SERVICE_KEY + "&sid=" + SERVICE_ID,
     getRandomKey: HOST + "getRandomKey?service_key=" + SERVICE_KEY + "&sid=" + SERVICE_ID,
-    scrap: HOST + "ScrapService?service_key=" + SERVICE_KEY + "&sid=" + SERVICE_ID + "&timeout=300"
+    scrap: HOST + "ScrapService?service_key=" + SERVICE_KEY + "&sid=" + SERVICE_ID + "&timeout=300",
     encParam: "/scraping/encParam",
     decrypt: "/scraping/decrypt",
   }
@@ -76,8 +76,7 @@ define(["jquery"], function ($) {
 
   function scrap(sessionKey) {
     return function(data) {
-      var json = JSON.parse(data);
-      var encodedJuminNum = json.encodedJuminNum;
+      var encodedJuminNum = data.encodedJuminNum;
       $.ajax({
         url: URLs.scrap + "&sessionKey=" + sessionKey + "&family_jumin=" + encodedJuminNum,
         crossDomain: true,
@@ -106,10 +105,8 @@ define(["jquery"], function ($) {
   }
 
   function getDecodedData(data) {
-    var json = JSON.parse(data);
-    console.log(json.decodedData);
+    console.log(data.decodedData);
   }
-
 
   return {
     downloadFSWSS: downloadFSWSS,

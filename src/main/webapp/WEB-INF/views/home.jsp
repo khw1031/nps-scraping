@@ -36,7 +36,7 @@
 <script type="text/javascript">
   require(["jquery", "npsScrap"], function ($, npsScrap) {
     $("#download-fswss").on("click", npsScrap.downloadFSWSS("설치 후에는 반드시 새로고침을 하거나 다시 접속해주세요.", "http://dl.hwlife.hscdn.com/Fintech/FSWSSSetup.exe"));
-    // $("#start-scrap").on("click", npsScrap.scrap);
+    $("#start-scrap").on("click", npsScrap.startScrap);
   })
 </script>
 </body>

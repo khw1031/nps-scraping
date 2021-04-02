@@ -2,7 +2,9 @@ package com.github.khw1031.npsscrap.service;
 
 import btworks.wskit.server.crypto.WCryptoKA;
 import com.github.khw1031.npsscrap.domain.DataSet;
+import org.springframework.stereotype.Service;
 
+@Service
 public class SecureService {
     public DataSet getEncParam(final DataSet input) throws Exception {
         DataSet result = new DataSet();
