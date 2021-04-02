@@ -1,0 +1,84 @@
+/* reset */
+body {
+    padding: 0;
+    margin: 0;
+}
+
+h1, h2, h3, h4, p {
+    margin: 0;
+}
+
+/* section */
+section {
+    padding: 2rem 1rem;
+}
+
+/* step2 */
+.banner-cont {
+    margin-top: 20px;
+    box-sizing: border-box;
+    width: 590px;
+    height: 205px;
+    border-radius: 3px;
+    background-color: #937b6e;
+    padding-top: 30px;
+    padding-left: 32px;
+    position: relative;
+    color: #fff;
+}
+
+.banner-cont h2 {
+    height: 36px;
+    font-size: 22px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 2;
+    letter-spacing: -1px;
+
+}
+
+.banner-cont p {
+    font-size: 18px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.44;
+    letter-spacing: -1px;
+    margin-top: 10px;
+    color: #fff;
+}
+
+.banner-cont::after {
+    content: '';
+    background: url(https://s3.ap-northeast-2.amazonaws.com/markup.hanwhalife.io/pc/asset/images/icon-area.svg) no-repeat;
+    position: absolute;
+    width: 98px;
+    height: 131px;
+    top: 40px;
+    right: 33px;
+}
+
+.banner-cont a {
+    font-size: 18px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: -1px;
+    color: #ffffff;
+    margin-top: 20px;
+    display: inline-block;
+    position: relative;
+}
+
+.banner-cont a::before {
+    content: '';
+    width: 6px;
+    height: 10px;
+    background: url(https://s3.ap-northeast-2.amazonaws.com/markup.hanwhalife.io/pc/asset/images/arrow-white.svg) no-repeat;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: -16px;
+}
