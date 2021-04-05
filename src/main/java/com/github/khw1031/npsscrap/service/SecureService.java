@@ -2,6 +2,7 @@ package com.github.khw1031.npsscrap.service;
 
 import btworks.wskit.server.crypto.WCryptoKA;
 import com.github.khw1031.npsscrap.domain.DataSet;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -14,6 +15,7 @@ public class SecureService {
         WCryptoKA wcrypto = new WCryptoKA();
         wcrypto.setEncoding("EUC-KR");
         String decodedKeyForJuminNum = wcrypto.decrypt(encKeyForJuminNum);
+        System.out.println(decodedKeyForJuminNum);
         String encodedJuminNum = "";
 
         if (!"".equals(juminNum)) {
@@ -41,6 +43,7 @@ public class SecureService {
         if (!"".equals(encData)) {
             decodedData = wcrypto.decryptByKey(decodedKey, encData);
         }
+        System.out.println(decodedData);
         result.put("decodedData", decodedData);
         return result;
     }

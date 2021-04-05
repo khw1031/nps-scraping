@@ -3,6 +3,7 @@ package com.github.khw1031.npsscrap;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+
 @SpringBootApplication
 public class NpsScrapApplication {
 

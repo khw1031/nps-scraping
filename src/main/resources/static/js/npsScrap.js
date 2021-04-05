@@ -55,9 +55,10 @@ define(["jquery"], function ($) {
   // STEP3: encParam - 주민번호 암호화
   function encParam(data) {
     if (data.indexOf("sessionKey") === -1) return;
+    console.log(data);
     var json = JSON.parse(data);
     var sessionKey = json.sessionKey;
-    var encKeyForJuminNum = json.encKey;
+    var encKeyForJuminNum = decodeURIComponent(json.encKey);
     var juminNum = document.querySelector("[name='juminNum']").value;
 
     $.ajax({
@@ -88,8 +89,8 @@ define(["jquery"], function ($) {
 
   function decrypt(data) {
     var json = JSON.parse(data);
-    var encKey = json.encKey;
-    var encData = json.encData;
+    var encKey = decodeURIComponent(json.encKey);
+    var encData = decodeURIComponent(json.encData);
     $.ajax({
       method: "POST",
       url: URLs.decrypt,
