@@ -11,14 +11,15 @@ import java.util.Map;
 
 @Configuration
 public class ScrapWebAppInitializer {
+
     @Bean
     public ServletRegistrationBean<HttpServlet> countryServlet() {
         Map<String, String> param = new HashMap<>();
-        param.put("properties", "C:\\Users\\hyunwoo\\nps-scraping\\src\\main\\resources\\wcrypto.properties");
-        ServletRegistrationBean<HttpServlet> servRegBean = new ServletRegistrationBean<>();
-        servRegBean.setServlet(new WCryptoServlet());
+        param.put("properties", "src/main/resources/wcrypto.properties");
+        ServletRegistrationBean<HttpServlet> servRegBean = new ServletRegistrationBean<>(new WCryptoServlet());
         servRegBean.setInitParameters(param);
         servRegBean.setLoadOnStartup(1);
         return servRegBean;
     }
+
 }
