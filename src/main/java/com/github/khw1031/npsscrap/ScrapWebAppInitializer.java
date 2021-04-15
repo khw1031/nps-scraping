@@ -15,11 +15,11 @@ public class ScrapWebAppInitializer {
     @Bean
     public ServletRegistrationBean<HttpServlet> countryServlet() {
         Map<String, String> param = new HashMap<>();
-        param.put("properties", "src/main/resources/application.properties");
+        param.put("properties", "src/main/resources/wcrypto.properties");
         ServletRegistrationBean<HttpServlet> servRegBean = new ServletRegistrationBean<>();
         servRegBean.setServlet(new WCryptoServlet());
         servRegBean.setInitParameters(param);
-        servRegBean.addUrlMappings("/securetest");
+        servRegBean.setLoadOnStartup(1);
         return servRegBean;
     }
 
